@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User & Password test</title>
+    <link rel="stylesheet" href="/user_styles.css" />
+  </head>
+
+  <body>
+    <h1 data-position="header">User & Password test</h1>
+
+    <section data-position="add-user">
+      <h2>Add User</h2>
+
+      <form action="/users" method="POST">
+        <input type="text" placeholder="email" name="email" />
+        <input type="text" placeholder="password" name="password" />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section data-position="update-user">
+      <div>
+        <h2>User & Password test!</h2>
+        <p>
+          Test for User & Pwd combination
+        </p>
+        <button id="update-button">Replace user & Pwd</button>
+      </div>
+    </section>
+
+    <section data-position="delete-user">
+      <div>
+        <h2>Remove User</h2>
+        <p>
+          Delete User
+        </p>
+        <button id="delete-button">Delete User</button>
+      </div>
+      <div id="message"></div>
+    </section>
+
+    <section data-position="users">
+      <h2>Users</h2>
+
+      <ul class="users">
+        <% for(var i = 0; i < users.length; i++) {%>
+        <li class="user">
+          <span><%= users[i].email %></span>:
+          <span><%= users[i].password %></span>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
